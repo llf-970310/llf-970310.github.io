@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="strtok函数 strtok()用来将字符串分割成一个个片段。参数str1指向欲分割的字符串，参数str2则为分割字符串中包含的所有字符。当strtok()在参数str1的字符串中发现参数str2包含的分割字符时,则会将该字符改为\0 字符。在第一次调用时，strtok()必需给予参数str1字符串，往后的调用则将参数str1设置成NULL。每次调用成功则返回指向被分割出片段的指针。   用法:">
-<meta name="keywords" content="编程,C语言,函数">
+<meta name="keywords" content="C语言,编程,函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C：常用函数">
 <meta property="og:url" content="http://yoursite.com/2016/02/18/c语言常用函数/index.html">
@@ -228,6 +228,22 @@
         
         
           
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
@@ -237,9 +253,6 @@
       
     </ul>
   
-
-  
-    
 
   
 
@@ -261,6 +274,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -284,9 +300,9 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/18/c语言常用函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李龙飞">
+      <meta itemprop="name" content="Faye">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/photo.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -367,6 +383,18 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/02/18/c语言常用函数/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/02/18/c语言常用函数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -433,9 +461,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/编程/" rel="tag"># 编程</a>
-          
             <a href="/tags/C语言/" rel="tag"># C语言</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
           
             <a href="/tags/函数/" rel="tag"># 函数</a>
           
@@ -489,6 +517,16 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
 
 
 
@@ -525,7 +563,11 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">李龙飞</p>
+              <img class="site-author-image" itemprop="image"
+                src="/images/photo.jpg"
+                alt="Faye" />
+            
+              <p class="site-author-name" itemprop="name">Faye</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -536,7 +578,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -608,17 +650,12 @@
             <div class="links-of-author motion-element">
               
                 <span class="links-of-author-item">
-                  <a href="https://github.com/llf-970310" target="_blank" title="github"><i class="fa fa-fw fa-globe"></i>github</a>
+                  <a href="https://github.com/llf-970310" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
                   
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://weibo.com/u/1774280377/home?wvr=5&lf=reg" target="_blank" title="weibo"><i class="fa fa-fw fa-globe"></i>weibo</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/li-long-fei-81-9" target="_blank" title="zhihu"><i class="fa fa-fw fa-globe"></i>zhihu</a>
+                  <a href="http://weibo.com/u/1774280377/home?wvr=5&lf=reg" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                   
                 </span>
               
@@ -673,7 +710,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">李龙飞</span>
+  <span class="author" itemprop="copyrightHolder">Faye</span>
 
   
 
@@ -691,7 +728,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.3.0</div>
 
 
 
@@ -781,6 +818,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
@@ -796,13 +840,42 @@
 
   
 
+  
+    <script id="dsq-count-scr" src="https://lilongfei.disqus.com/count.js" async></script>
+  
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2016/02/18/c语言常用函数/';
+        this.page.identifier = '2016/02/18/c语言常用函数/';
+        this.page.title = 'C：常用函数';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lilongfei.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
 
 
 
 
 
   
+
+
 
 
 
