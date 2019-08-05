@@ -762,7 +762,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-05 17:29:07" itemprop="dateModified" datetime="2019-08-05T17:29:07+08:00">2019-08-05</time>
+                <time title="修改时间：2019-08-05 20:48:07" itemprop="dateModified" datetime="2019-08-05T20:48:07+08:00">2019-08-05</time>
               
             
           </span>
@@ -1038,7 +1038,8 @@
 <li>git diff 查看修改内容</li>
 </ul>
 <h1 id="版本跳转"><a href="#版本跳转" class="headerlink" title="版本跳转"></a>版本跳转</h1><ul>
-<li>git reset –hard commit_id 版本跳转<br><strong>HEAD指向当前版本，前一个版本在HEAD后加^</strong></li>
+<li>git reset –hard commit_id 版本跳转</li>
+<li><em>HEAD指向当前版本，前一个版本在HEAD后加^*</em></li>
 <li>git log 查看提交历史，从而确定退回版本</li>
 <li>git reflog 查看命令历史，从而确定前进版本</li>
 </ul>
@@ -1231,10 +1232,11 @@
 <p>strtok()用来将字符串分割成一个个片段。参数str1指向欲分割的字符串，参数str2则为分割字符串中包含的所有字符。当strtok()在参数str1的字符串中发现参数str2包含的分割字符时,则会将该字符改为\0 字符。在第一次调用时，strtok()必需给予参数str1字符串，往后的调用则将参数str1设置成NULL。每次调用成功则返回指向被分割出片段的指针。</p>
 </blockquote>
 <ul>
-<li>用法: char <em>strtok(char </em>str1, char *str2);</li>
+<li>用法: char *strtok(char *str1, char *str2);</li>
 <li>功能: 分解字符串为一组字符串。str1为要分解的字符串，str2为分隔符字符串。</li>
 <li>例如：strtok(“abc,def,ghi”,”,”)，最后可以分割成为abc def ghi.</li>
 <li>程序例:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> input[<span class="number">16</span>] = <span class="string">"abc,d"</span>;</span><br><span class="line">    <span class="keyword">char</span> *p;</span><br><span class="line">    <span class="comment">/* strtok places a NULL terminator in front of the token, if found */</span></span><br><span class="line">    p = strtok(input, <span class="string">","</span>);</span><br><span class="line">    <span class="keyword">while</span>(p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* A second call to strtok using a NULL as the first parameter returns a pointer to the character following the token */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%sn"</span>, p);</span><br><span class="line">        p = strtok(<span class="literal">NULL</span>, <span class="string">","</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
           <!--noindex-->
@@ -1832,6 +1834,7 @@
       
         
           <h1 id="字符串的截取"><a href="#字符串的截取" class="headerlink" title="字符串的截取"></a>字符串的截取</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">'Python is Fun!'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[<span class="number">1</span>:<span class="number">5</span>]</span><br><span class="line"><span class="string">'ytho'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[:<span class="number">5</span>]</span><br><span class="line"><span class="string">'Pytho'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[<span class="number">1</span>:]</span><br><span class="line"><span class="string">'ython is Fun!'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[:]</span><br><span class="line"><span class="string">'Python is Fun!'</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左边的开始是包含了下边界，而取到的最大范围不包括上边界</li>
 <li>[1:] 截取第二个字符到结尾</li>

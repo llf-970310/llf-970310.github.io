@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="字符串的截取123456789&amp;gt;&amp;gt;&amp;gt; s = &apos;Python is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[1:5]&apos;ytho&apos;&amp;gt;&amp;gt;&amp;gt; s[:5]&apos;Pytho&apos;&amp;gt;&amp;gt;&amp;gt; s[1:]&apos;ython is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[:]&apos;Python is Fun!&apos;  当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左边">
-<meta name="keywords" content="编程,Python,学习笔记">
+  <meta name="description" content="字符串的截取123456789&amp;gt;&amp;gt;&amp;gt; s = &apos;Python is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[1:5]&apos;ytho&apos;&amp;gt;&amp;gt;&amp;gt; s[:5]&apos;Pytho&apos;&amp;gt;&amp;gt;&amp;gt; s[1:]&apos;ython is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[:]&apos;Python is Fun!&apos;   当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左">
+<meta name="keywords" content="编程,学习笔记,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python：学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/02/18/Python/index.html">
 <meta property="og:site_name" content="Faye&#39;s Blog">
-<meta property="og:description" content="字符串的截取123456789&amp;gt;&amp;gt;&amp;gt; s = &apos;Python is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[1:5]&apos;ytho&apos;&amp;gt;&amp;gt;&amp;gt; s[:5]&apos;Pytho&apos;&amp;gt;&amp;gt;&amp;gt; s[1:]&apos;ython is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[:]&apos;Python is Fun!&apos;  当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左边">
+<meta property="og:description" content="字符串的截取123456789&amp;gt;&amp;gt;&amp;gt; s = &apos;Python is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[1:5]&apos;ytho&apos;&amp;gt;&amp;gt;&amp;gt; s[:5]&apos;Pytho&apos;&amp;gt;&amp;gt;&amp;gt; s[1:]&apos;ython is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[:]&apos;Python is Fun!&apos;   当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-02-20T13:40:20.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python：学习笔记">
-<meta name="twitter:description" content="字符串的截取123456789&amp;gt;&amp;gt;&amp;gt; s = &apos;Python is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[1:5]&apos;ytho&apos;&amp;gt;&amp;gt;&amp;gt; s[:5]&apos;Pytho&apos;&amp;gt;&amp;gt;&amp;gt; s[1:]&apos;ython is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[:]&apos;Python is Fun!&apos;  当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左边">
+<meta name="twitter:description" content="字符串的截取123456789&amp;gt;&amp;gt;&amp;gt; s = &apos;Python is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[1:5]&apos;ytho&apos;&amp;gt;&amp;gt;&amp;gt; s[:5]&apos;Pytho&apos;&amp;gt;&amp;gt;&amp;gt; s[1:]&apos;ython is Fun!&apos;&amp;gt;&amp;gt;&amp;gt; s[:]&apos;Python is Fun!&apos;   当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左">
 
 
 
@@ -420,20 +420,24 @@
 
       
         <h1 id="字符串的截取"><a href="#字符串的截取" class="headerlink" title="字符串的截取"></a>字符串的截取</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">'Python is Fun!'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[<span class="number">1</span>:<span class="number">5</span>]</span><br><span class="line"><span class="string">'ytho'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[:<span class="number">5</span>]</span><br><span class="line"><span class="string">'Pytho'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[<span class="number">1</span>:]</span><br><span class="line"><span class="string">'ython is Fun!'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s[:]</span><br><span class="line"><span class="string">'Python is Fun!'</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>当使用以冒号分隔的字符串，结果包含了以这对偏移标识的连续的内容，左边的开始是包含了下边界，而取到的最大范围不包括上边界</li>
 <li>[1:] 截取第二个字符到结尾</li>
 <li>[:5] 截取从头开始到第五个字符之前</li>
 </ul>
 <a id="more"></a>
+
 <h1 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h1><ul>
 <li>条件语句后面要写冒号</li>
 <li>elif=else if</li>
 <li>字符串中的空格也可被in语句选取</li>
 </ul>
 <h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">print</span> num</span><br><span class="line"><span class="keyword">print</span> num</span><br><span class="line"><span class="comment"># 输出结果为0, 1, 2, 3, 4, 4</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>for语句相当于给num重新定义</li>
+<li><p>for语句相当于给num重新定义</p>
+</li>
 <li><p>循环语句后面要写冒号</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">4</span>,<span class="number">0</span>,<span class="number">-1</span>)</span><br><span class="line">[<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 </li>
@@ -467,9 +471,9 @@
           
             <a href="/tags/编程/" rel="tag"># 编程</a>
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
-          
             <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       

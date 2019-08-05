@@ -431,8 +431,9 @@
 <li>指数形式字母e之前必须有数字，且e后面的指数必须为整数。</li>
 </ul>
 <a id="more"></a>
+
 <h1 id="运算符与表达式"><a href="#运算符与表达式" class="headerlink" title="运算符与表达式"></a>运算符与表达式</h1><ul>
-<li>将x中的数值保留到小数点后两位，并将第三位四舍五入：x=(int)(x*100+0.5)/100.0<br><strong>除以100.0，不是100</strong><br><strong>注意“/”运算符，如果分子和分母都是整数，那么是整除</strong></li>
+<li>将x中的数值保留到小数点后两位，并将第三位四舍五入：x=(int)(x<em>100+0.5)/100.0<br>*</em>除以100.0，不是100<strong><br></strong>注意“/”运算符，如果分子和分母都是整数，那么是整除**</li>
 <li>%操作的两个操作数都必须是整型数。</li>
 <li>强制类型转换应该把类型名加括号。</li>
 <li>abs是对整型数求绝对值，fabs是对实型数求绝对值，pow是求幂，exp是求e的x次幂。</li>
@@ -453,6 +454,7 @@
 <li>只能在循环体内（跳出循环）和switch语句体内（跳出该switch语句体）使用break语句。</li>
 <li>continue语句的作用是结束<strong>本次</strong>循环。</li>
 <li>获取一个整数各位上的数字（进制转换，下例为十转十）<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> n=<span class="number">12345</span>,d;</span><br><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    d=n%<span class="number">10</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,d);</span><br><span class="line">    n/=<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><ul>
