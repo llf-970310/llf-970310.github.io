@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="String 158 哈希表  写出一个函数 anagram(s, t) 判断两个字符串是否可以通过改变字母的顺序变成一样的字符串。 写出一个函数 anagram(s, t) 判断两个字符串是否可以通过改变字母的顺序变成一样的字符串。    55 哈希表  比较两个字符串A和B，确定A中是否包含B中所有的字符。字符串A和B中的字符都是 大写字母    13 暴力查找 len1-len2  对于一个">
-<meta name="keywords" content="编程,算法,Lintcode,Python">
+<meta name="keywords" content="算法,编程,Lintcode,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lintcode 「阶梯训练——美国大公司」 题解">
 <meta property="og:url" content="http://yoursite.com/2018/06/14/Lintcode 题解/index.html">
 <meta property="og:site_name" content="Faye&#39;s Blog">
 <meta property="og:description" content="String 158 哈希表  写出一个函数 anagram(s, t) 判断两个字符串是否可以通过改变字母的顺序变成一样的字符串。 写出一个函数 anagram(s, t) 判断两个字符串是否可以通过改变字母的顺序变成一样的字符串。    55 哈希表  比较两个字符串A和B，确定A中是否包含B中所有的字符。字符串A和B中的字符都是 大写字母    13 暴力查找 len1-len2  对于一个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-07T12:41:10.117Z">
+<meta property="og:updated_time" content="2019-08-05T09:29:07.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lintcode 「阶梯训练——美国大公司」 题解">
 <meta name="twitter:description" content="String 158 哈希表  写出一个函数 anagram(s, t) 判断两个字符串是否可以通过改变字母的顺序变成一样的字符串。 写出一个函数 anagram(s, t) 判断两个字符串是否可以通过改变字母的顺序变成一样的字符串。    55 哈希表  比较两个字符串A和B，确定A中是否包含B中所有的字符。字符串A和B中的字符都是 大写字母    13 暴力查找 len1-len2  对于一个">
@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-07 20:41:10" itemprop="dateModified" datetime="2018-07-07T20:41:10+08:00">2018-07-07</time>
+                <time title="修改时间：2019-08-05 17:29:07" itemprop="dateModified" datetime="2019-08-05T17:29:07+08:00">2019-08-05</time>
               
             
           </span>
@@ -785,7 +785,7 @@
 <li><p>119   状态转移方程：</p>
 <ul>
 <li>word1[n] == word2[m]    word1[0..n] =&gt; word2[0..m] = word[0..n-1] =&gt; word2[0..m-1]</li>
-<li>word1[n] != word2[m]     word1[0..n] =&gt; word2[0..m] = min(word1[0..n-1] =&gt; word2[0..m], word1[0..n] =&gt; word2[0..m-1], word1[0..n-1] =&gt; word2[0..m-1]) + 1</li>
+<li>word1[n] != word2[m]     word1[0..n] =&gt; word2[0..m] = min(word1[0..n-1] =&gt; word2[0..m], word1[0..n] =&gt; word2[0..m-1], word1[0..n-1] =&gt; word2[0..m-1]) + 1  </li>
 </ul>
 <blockquote>
 <p>给出两个单词word1和word2，计算出将word1 转换为word2的最少操作次数。<br>你总共三种操作方法：</p>
@@ -799,7 +799,7 @@
 <li><p>118   状态转移方程：</p>
 <ul>
 <li>S[n] != T[m]    S[0…n]的不同的子序列中T[0…m]出现的个数 = S[0…n-1]的子序列中T[0…m]出现的个数</li>
-<li>S[n] == T[m]   S[0…n]的不同的子序列中T[0…m]出现的个数 = S[0…n-1]的子序列中T[0…m]出现的个数 + S[0…n-1]的子序列中T[0…m-1]出现的个数</li>
+<li>S[n] == T[m]   S[0…n]的不同的子序列中T[0…m]出现的个数 = S[0…n-1]的子序列中T[0…m]出现的个数 + S[0…n-1]的子序列中T[0…m-1]出现的个数  </li>
 </ul>
 <blockquote>
 <p>给出字符串S和字符串T，计算S的不同的子序列中T出现的个数。<br>子序列字符串是原始字符串通过删除一些(或零个)产生的一个新的字符串，并且对剩下的字符的相对位置没有影响。(比如，<strong>“ACE”</strong>是<strong>“ABCDE”</strong>的子序列字符串,而<strong>“AEC”</strong>不是)。 </p>
@@ -861,9 +861,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/编程/" rel="tag"># 编程</a>
-          
             <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
           
             <a href="/tags/Lintcode/" rel="tag"># Lintcode</a>
           
