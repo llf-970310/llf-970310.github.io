@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="焦油坑有个特点，当身陷其中时，挣扎的越猛烈，焦油就会缠的越紧。作者将大型系统开发比作焦油坑，旨在说明大型系统开发是一项极其繁杂困难的行为，不论团队规模大小，不论团队成员能力高低，都只有很少一部分可以从焦油坑走出来，即满足开发初期目标、进度、预算等要求。 这时人们迫切想寻找一把尚方宝剑，来解决开发管理中的各种问题，但很可惜，软件的特性决定了软件开发没有银弹，本书也只是从以下几个方面给出了软件工程管理">
+<meta name="keywords" content="人月神话,软件工程,读书笔记，项目管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《人月神话》读书笔记">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/《人月神话》读书笔记/index.html">
+<meta property="og:site_name" content="Faye&#39;s Blog">
+<meta property="og:description" content="焦油坑有个特点，当身陷其中时，挣扎的越猛烈，焦油就会缠的越紧。作者将大型系统开发比作焦油坑，旨在说明大型系统开发是一项极其繁杂困难的行为，不论团队规模大小，不论团队成员能力高低，都只有很少一部分可以从焦油坑走出来，即满足开发初期目标、进度、预算等要求。 这时人们迫切想寻找一把尚方宝剑，来解决开发管理中的各种问题，但很可惜，软件的特性决定了软件开发没有银弹，本书也只是从以下几个方面给出了软件工程管理">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-18T14:34:44.547Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《人月神话》读书笔记">
+<meta name="twitter:description" content="焦油坑有个特点，当身陷其中时，挣扎的越猛烈，焦油就会缠的越紧。作者将大型系统开发比作焦油坑，旨在说明大型系统开发是一项极其繁杂困难的行为，不论团队规模大小，不论团队成员能力高低，都只有很少一部分可以从焦油坑走出来，即满足开发初期目标、进度、预算等要求。 这时人们迫切想寻找一把尚方宝剑，来解决开发管理中的各种问题，但很可惜，软件的特性决定了软件开发没有银弹，本书也只是从以下几个方面给出了软件工程管理">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/14/《人月神话》读书笔记/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>《人月神话》读书笔记 | Faye's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Faye's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/《人月神话》读书笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Faye">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《人月神话》读书笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-14 17:20:56" itemprop="dateCreated datePublished" datetime="2019-09-14T17:20:56+08:00">2019-09-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-18 22:34:44" itemprop="dateModified" datetime="2019-09-18T22:34:44+08:00">2019-09-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书笔记/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/14/《人月神话》读书笔记/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/09/14/《人月神话》读书笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>焦油坑有个特点，当身陷其中时，挣扎的越猛烈，焦油就会缠的越紧。</strong>作者将大型系统开发比作焦油坑，旨在说明大型系统开发是一项极其繁杂困难的行为，不论团队规模大小，不论团队成员能力高低，都只有很少一部分可以从焦油坑走出来，即满足开发初期目标、进度、预算等要求。 这时人们迫切想寻找一把尚方宝剑，来解决开发管理中的各种问题，但很可惜，软件的特性决定了软件开发没有银弹，本书也只是从以下几个方面给出了软件工程管理上的一些建议。</p>
+<h2 id="团队构建"><a href="#团队构建" class="headerlink" title="团队构建"></a>团队构建</h2><p>优秀程序员和较差程序员在编码效率上往往存在着很大的差异，所以管理人员倾向于使用小而精的队伍进行系统开发，但随之而来产生一个问题，即使效率再高的开发队伍，面对一个十分庞大的系统开发任务时，仍然会显得力不从心。</p>
+<p>作者介绍了一种类似于“外科手术队伍”的解决方案，具体是指<strong>大型项目的每一个部分由一个团队负责，而每一个团队又以外科手术的形式构建，是一种 1+N 的形式</strong>。1 的那个人是一个经验丰富的系统架构师，负责整体的架构设计，而 N 进行工作上的支持。架构师还负责决定一切有争议的事务，所有的纷争都要由他来拍板。如果在这一点上不加以限制，团队的注意力会集中于各式各样的想法和争议上，也就无法专注于实现程序的具体功能。</p>
+<p><em>编码人员可能会认为，一切都由架构师来决定，我们的创造力要如何体现？</em>实际上程序的实现过程也能体现一个人的创造力，创造和发明的机会不会因为系统在主体上的限制而减少。此外，要保证团队中管理人员和技术人员具有相同的威信，管理人员要参与技术课程，技术人员要进行管理培训，保证这两类人在关键时刻可以互换。</p>
+<p><strong>软件开发团队之间要注重沟通和交流</strong>，如果交流不充分，人与人之间就无法产生有效的合作，甚至会产生矛盾与分歧，带来不小的麻烦。例如，有些小组会在工作过程中修改自己程序的功能，但并没有及时告知其它小组，最终导致整个项目出现混乱，开发无法正常进行。</p>
+<h2 id="进度控制"><a href="#进度控制" class="headerlink" title="进度控制"></a>进度控制</h2><p>在众多软件项目中，<strong>缺乏合理的时间进度是造成项目滞后的最主要原因</strong>，而导致时间进度的规划出了问题，往往是由于对项目的规模没有一个清晰的认识。</p>
+<p>有些人会用人月来衡量一项工作的规模，这暗示着人数和时间可以相互替换，即十个人做一个月的工作等同于一个人做十个月的工作，显然这是不可能成立的。因为软件开发是一个团队工作，人与人之间的交流沟通会耗费大量的时间，通过增加人手所减少的时间将不足以抵消因为交流沟通所增加的时间，最后的结果就是人多了，项目的进度反而更慢了。</p>
+<p>在对项目规模的估计上还会存在这样的误区，例如利用比例估算整个项目的时间，或是用小型项目所需的时间去外推代码量更大的项目所需的时间。为了控制项目进度，可以设置“里程碑”，里程碑必须是具体且可度量的，模糊的里程碑为弄虚作假提供了可能，反而适得其反。</p>
+<h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><p>有了上述项目开发过程中的“价值观”是远远不够的，还需要具体执行过程的“方法论”。</p>
+<ul>
+<li>手册是开发过程中很有必要的工具，<strong>手册中的描述必须是详尽且准确的</strong></li>
+<li>会议也是项目运转过程中不可或缺的一部分，会议分为周例会和年度大会，周例会负责快速解决问题，而积压的老问题在年度大会中解决</li>
+<li>当实现人员遇到问题时，要积极与架构师进行沟通，而不是自行猜测，沟通的内容也要有书面记录，并发布给用户和其他实现人员</li>
+<li>产品测试很重要，测试要查明每一个可能的缺陷，因为所有的缺陷在现实使用环境中都会暴露出来</li>
+</ul>
+<h2 id="系统设计与开发"><a href="#系统设计与开发" class="headerlink" title="系统设计与开发"></a>系统设计与开发</h2><p>在系统设计过程中，<strong>概念完整性应该是最优先要考虑的因素</strong>，意思是指整个项目的设计思路应该保持统一，并且有时候为了统一，甚至要舍弃一些更高级的特性和改进。系统的概念完整性决定了系统的易用性。</p>
+<p>架构师在设计第一个系统时，通常会比较谨慎，因为自己对整个项目的流程还不熟悉。但当他们准备设计第二个系统时，往往是信心满满，但这其中就埋伏着很大的隐患。他们想要将所有的好想法都塞进新系统中，但过于繁杂的功能反而会导致系统的易用性下降，有时候甚至还会影响到系统的基本功能。<strong>所以架构师在设计自己的第二个项目时，一定要小心谨慎，并时刻约束自己，不要对系统过度优化，画蛇添足。</strong></p>
+<p>另外，在项目设计初期就应该意识到，<strong>变化是不可避免的</strong>，无论是需求上的变化还是技术上的变化，架构师和编程人员都要做好应对变化的准备。例如对项目进行细致的模块化分割，设计函数时保证函数的可扩展性，撰写准确详尽的文档等。</p>
+<p>编程人员在开发程序时，除了要注重程序的运行效率，也不能忽略了程序的运行空间，运行空间实际也是成本的一部分。项目经理在控制规模时，要考虑到所有的方面，而不只是程序的核心部分。当程序占用的空间成为一种问题时，要考虑是否通过削减功能或降低运行效率来保证程序的大小。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/人月神话/" rel="tag"># 人月神话</a>
+          
+            <a href="/tags/软件工程/" rel="tag"># 软件工程</a>
+          
+            <a href="/tags/读书笔记，项目管理/" rel="tag"># 读书笔记，项目管理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/08/浅谈 Session 和 Cookie/" rel="next" title="浅谈 Session 和 Cookie">
+                <i class="fa fa-chevron-left"></i> 浅谈 Session 和 Cookie
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/photo.jpg"
+                alt="Faye" />
+            
+              <p class="site-author-name" itemprop="name">Faye</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/llf-970310" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/u/1774280377/home?wvr=5&lf=reg" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#团队构建"><span class="nav-number">1.</span> <span class="nav-text">团队构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进度控制"><span class="nav-number">2.</span> <span class="nav-text">进度控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目管理"><span class="nav-number">3.</span> <span class="nav-text">项目管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统设计与开发"><span class="nav-number">4.</span> <span class="nav-text">系统设计与开发</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Faye</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://lilongfei.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/09/14/《人月神话》读书笔记/';
+        this.page.identifier = '2019/09/14/《人月神话》读书笔记/';
+        this.page.title = '《人月神话》读书笔记';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lilongfei.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
